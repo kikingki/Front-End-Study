@@ -1,0 +1,17 @@
+.list {
+    all: unset;     /* list의 점 지우기 */
+}
+.input {
+    all: unset;
+    background-color: skyblue;
+    padding: 10px 10px;
+    width:  200px;
+    height: 60px;
+
+    color: white;
+    border-radius: 12px;
+}
+
+.input::placeholder {
+    color: white;
+}
