@@ -22,7 +22,10 @@ const loadTodos = () => {
 };
 
 const saveTodos = () => {
+  // [1,2,3,4] => "[1,2,3,4]"
   const stringToDos = JSON.stringify(toDos);
+  
+  //localStorage.setItem(저장할 이름, 저장할 객체);
   localStorage.setItem(TODO_LS, stringToDos);
 }
 
@@ -30,7 +33,14 @@ const handleDelete = (evnet) => {
   const parent = evnet.target.parentNode; //누른 타겟의 부모노드를 저장
   parent.remove();
 
-  const cleanedTodos = toDos.filter((todo)=>{ //filter는 반환 값이 true인 것만 모아서 리스트로 만듬
+  // const arr = [1,2,3];
+  // const arr2 = arr.filter((num)=> {
+  //   return num  % 2 == 0;
+  // });
+  // arr2 = [2];
+
+  const cleanedTodos = toDos.filter((todo)=>{ 
+    //filter는 반환 값이 true인 것만 모아서 리스트로 만듬
     return todo.id !== parseInt(parent.id);
   })
 
@@ -63,7 +73,7 @@ const createToDo = (value) => {
 // camelCase
 //addEventListener는 기본적으로 event 객체 반환
 const handleSubmit = (event) => {
-    event.preventDefault();   //새로고침X
+    event.preventDefault();   //기본적인 event를 막음(새로고침, value 초기화)
     const value = input.value;
     input.value = "";         //input의 value 값을 빈 문자열로
     createToDo(value);        //value 값으로 todo 생성

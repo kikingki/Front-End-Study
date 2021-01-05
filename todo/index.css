@@ -1,6 +1,39 @@
+
+/* 모든 객체에 margin, padding을 없애고 box를 border-box 형태로  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.empty { /* 리스트를 밀어내는 태그 */
+    position: relative;
+    height: 100px;
+}
+
 .list {
     all: unset;     /* list의 점 지우기 */
+    width: 100vw;
+
+    /* 한 줄에 todo 2개 정렬 */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    justify-content: center;
+    column-gap: 10px;
 }
+
+.list li {
+    all: unset;
+    width: 40vw;
+    height: 100px;
+    background-color: skyblue;
+
+    transition: all 500ms;
+    
+}
+
 .input {
     all: unset;
     background-color: skyblue;
@@ -14,4 +47,46 @@
 
 .input::placeholder {
     color: white;
+}
+
+.nav {
+    position: fixed;    /* 스크롤을 내려도 navbar 고정 */
+    background-color: #b2bec3;
+    width: 100vw;
+    height: 100px;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 12%;
+}
+
+.nav__logo,
+.nav__element {
+    position: relative;
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+}
+
+.nav__element span {
+    margin: 1vw;
+}
+
+.content {
+    height: 200vh;
+}
+
+/* 화면에 대한 예외 처리 - 조건이 맞으면 실행 */
+@media screen and (max-width: 1000px) {
+    .nav {
+        height: 200px;
+    }
+
+
+    .list li {
+        width: 80vw;
+        background-color: steelblue;
+        
+    }
 }
