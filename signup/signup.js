@@ -63,7 +63,7 @@ const checkInputs = () => {
     } else if (p!==cp){
         setErrorMessage(check_password, "Passwords do not match");
     } else {
-        setSucess(password);
+        setSucess(check_password);
     }
 }
 
