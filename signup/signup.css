@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background-color: #CADEE3;
+
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'S-CoreDream-3Light', sans-serif;
+    transition: all 800ms;
+
+}
+
+.container {
+    width: 450px;
+    height: 550px;
+    background-color: whitesmoke;
+    transition: all 800ms;
+
+    border-radius: 3px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+}
+
+.header h1 {
+    font-family: 'CookieRun-Regular';
+    animation: bounce_frames 600ms;
+    /* 정해진 순서로 진행했다가 반대 순서로 진행 */
+    animation-direction: alternate; 
+    animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+    animation-iteration-count: 5;
+}
+
+@keyframes bounce_frames {
+    from {transform: translate3d(0, -120px, 0);}
+    to {transform: translate3d(0, 0px, 0);}
+  }
+
+.form {
+    padding: 20px 30px;
+}
+
+.form-element {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+
+.form-element input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+}
+
+.form-element.success input{
+    border-color: #00CF00;
+}
+
+.form-element.error input{
+    border-color: #FF074D;
+}
+
+.form-element small {
+    visibility: hidden;
+    position: absolute;
+}
+
+.form-element.error small {
+    color: #FF074D;
+    visibility: visible;
+}
+
+.form button {
+    width: 100%;
+    padding: 8px;
+
+    background-color: #4E8092;
+    border: 2px solid #4E8092;
+    color: white;
+    display: block;
+
+    font-size: 15px;
+    border-radius: 4px;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .container {
+        background-color: #E7E7E8;
+        transition: all 800ms;
+    }
+
+    body {
+        background-color: #AAB7BC;
+        transition: all 800ms;
+    }
+}
