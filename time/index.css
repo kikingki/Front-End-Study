@@ -1,0 +1,18 @@
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.time {
+    /* em vs rem */
+    /* em == 부모요소의 폰트 크기에 따라 변함 
+    default 폰트 크기는 16px
+    2em == 32px */
+    /* rem == 최상위 요소 폰트 크기에 따라 변함 */
+    font-size: 5rem;
+}

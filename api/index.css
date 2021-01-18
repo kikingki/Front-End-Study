@@ -1,0 +1,16 @@
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.weather {
+    width: 300px;
+    height: 150px;
+
+    background-color: aquamarine;
+}
