@@ -1,0 +1,183 @@
+@font-face {
+    font-family: 'Recipekorea';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cafe24Oneprettynight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    font-family: 'Cafe24Oneprettynight', serif;
+    color: rgba(255,255,255,0.9);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: slide 16s infinite;
+}
+
+/* 배경화면,글씨 투명도 바꾸는 애니메이션 */
+@keyframes slide {
+    0% {
+        background-image: url('images/b1.png');
+        color: rgba(255,255,255,0.4);
+    }
+    25% {
+        background-image: url('images/b1.png');
+        color: rgba(255,255,255,1.0);
+    }
+    25.001% {
+        background-image: url('images/b2.png');
+        color: rgba(0,0,0,0.4);
+    }
+    50% {
+        background-image: url('images/b2.png');
+        color: rgba(0,0,0,1.0);
+    }
+    50.001% {
+        background-image: url('images/b3.png');
+        color: rgba(255,255,255,0.4);
+    }
+    75% {
+        background-image: url('images/b3.png');
+        color: rgba(255,255,255,1.0);
+    }
+    75.001% {
+        background-image: url('images/b4.png');
+        color: rgba(0,0,0,0.4);
+    }
+    100% {
+        background-image: url('images/b4.png');
+        color: rgba(0,0,0,1.0);
+    }
+}
+
+.form {
+    margin: 40px;
+}
+
+.form input {
+    all: unset;
+    
+    width:  250px;
+    height: 30px;
+    padding: 10px 10px;
+
+    background-color: rgba(234,239,248,0.5);
+    color: white;
+
+    border-radius: 8px;
+}
+
+/* 이름이 입력될 경우 input창 숨기기 */
+.form.hidden input {
+    display: none;
+}
+
+.form2 input {
+    all: unset;
+    
+    width:  250px;
+    height: 20px;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+
+    background-color: rgba(234,239,248,0.5);
+    color: white;
+
+    border-radius: 8px;
+}
+
+/* Todo 리스트 */
+.list {
+    all: unset;
+    height: 30vh;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: scroll;
+}
+
+/* 스크롤바 숨기기 */
+.list::-webkit-scrollbar {
+    display: none; 
+}
+
+.list li {
+    all: unset;
+    width: 270px;
+    height: 100px;
+    margin: 7px;
+
+    text-decoration: underline;
+    text-underline-position: under;
+    
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.list li button{
+    all: unset;
+    margin-left: 7px;
+
+    font-size: 0.9rem;
+}
+
+/* 시계 */
+.time {
+    font-size: 5rem;
+    font-family: 'Recipekorea', serif;
+}
+
+/* 날씨 */
+.weather {
+    width: 170px;
+    height: 50px;
+    padding: 10px;
+    left: 20px;
+    bottom: 20px;
+
+    position: absolute;
+
+    border-radius: 10px;
+
+    background-color: rgba(48, 55, 69, 0.6);
+    color: white;
+    text-align: center;
+}
+
+.weather__place {
+    font-size: 1.2rem;
+}
+
+.weather__temperature {
+    padding-left: 7px;
+    font-size: 1.5rem;
+}
