@@ -43,3 +43,34 @@
     + JS: 지금까지 배운 것들을 모두 종합해 하나의 웹사이트를 만들었다. localStorage 사용법이 헷갈렸었는데, 이름을 저장하는 기능과 Todo 기능을 함께 만들어보니 변수의 선언과 코드들이 왜 이렇게 쓰이는 건지 정확히 알게 됐다. 하지만 API를 다루는 건 아직 좀 미숙한 것 같다. 이부분은 카카오 API를 활용한 미니프로젝트를 진행해봐야겠다. 그리고 classList를 사용하니 css 디자인을 유동적으로 다룰 수 있어 쓸 일이 자주 있을 것 같다.
     + CSS: 지정된 시간의 % 비율로 배경화면과 글씨 투명도가 바뀌는 slide 애니메이션을 만들어 적용했다. Todo 리스트는 스크롤을 none으로 숨기고, underline을 추가해 todo 리스트를 명확히 구분하는 등 디자인을 깔끔하게 정리했다. 현재 지역과 온도는 왼쪽 하단에 position을 absolute로 설정하여 위치를 고정했다.
     + font size의 단위인 rem이 최상위 요소에 비례하는 크기이므로 반응형 웹을 만드는 데 효과적이었다.
+
+#### 21.2.8
+  + #### ReactFirst & Counter
+    + component, className, Fragment 등 리액트의 기본 문법에 대해 학습했다.
+    + 클래스형 컴포넌트와 함수형 컴포넌트의 차이를 배웠다. 클래스형 컴포넌트의 경우 state 기능과 life cycle 기능을 사용할 수 있고, render 함수가 꼭 있어야 한다. 
+    
+    함수형 컴포넌트의 경우 클래스형 컴포넌트보다 선언하기 좀 더 편하고, 메모리 자원을 덜 사용한다. state 기능과 life cycle 기능을 사용할 수 없다는 단점이 있었는데 리액트 훅이 도입되며 함수형 컴포넌트와 함께 사용함으로써 해결되었다.
+    + 함수형 컴포넌트든 클래스형 컴포넌트든 state를 직접 조작하는 것이 아닌, setState나 useState와 같은 세터 함수를 반드시 사용하여 조작해야 한다.
+
+#### 21.2.15
+  + #### [Movie App](https://github.com/kikingki/Movie_app)
+    + 영화 API를 사용하여 영화의 제목, 줄거리, 포스터 등을 띄웠다.
+    + 클래스형 컴포넌트를 사용해 App.js를 작성했다. state 기능으로 로딩의 유무(isLoaded), 영화목록(movies)을 가져왔다. 
+    + Ajax는 Javascript 를 사용한 비동기 통신이며, 클라이언트와 서버간의 XML 데이터를 주고받는 기술이다. react의 API 호출 메서드는 fetch와 axios가 있는데, 둘 다 Promise 객체를 반환한다. 
+    
+    axios는 fetch에서 지원하지 않는 응답시간 초과 설정, 요청 취소, JSON 데이터 자동 변환의 기능이 있다. 구형 브라우저를 지원한다.
+    
+    fetch는 내장 라이브러리로 import를 하지 않아도 사용이 가능하고, 라이브러리의 업데이트에 따른 에러방지가 가능하다. 하지만 지원하지 않는 브라우저가 있다.
+    + 삼항연산자를 사용해, isLoaded 값이 false이면 로딩바를 띄우고, true이면 영화정보를 띄웠다. 로딩바의 경우 rotate() 메서드와 animation-timing-function값을 사용해 손쉽게 만들었다.
+    + React 컴포넌트는 Life Cycle이 있다. componentDidMount에서는 DOM에 접근할 수 있어, AJAX 요청을 하거나, setTimeout, setInterval를 처리하는 코드를 작성한다.
+    + Mount(생성)
+      1. constructor(state, context, defaultProps 저장)
+      2. render
+      3. componentDidMount
+    + async & await은 자바스크립트의 비동기 처리 패턴 중 하나이다. 기존의 비동기 처리 방식인 콜백 함수와 프로미스의 단점을 보완하고 개발자가 읽기 좋은 코드로 작성할 수 있다. 일반적으로 await의 대상이 되는 비동기 처리 코드는 Axios, fetch같은 'Promise 객체'를 반환하는 API 호출 함수이다.
+    + async & await의 기본 문법
+    ```
+    async function 함수명() {
+      await 비동기_처리_메서드_명();
+    }
+    ```
